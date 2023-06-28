@@ -1,17 +1,13 @@
 import time
 
-def focus_timer(minutes):
-    seconds = minutes * 60
-    start_time = time.time()
-    end_time = start_time + seconds
+minutes = int(input("Enter the number of minutes to focus:"))
+seconds = minutes * 60
 
-    while time.time() < end_time:
-        remaining_time = int(end_time - time.time())
-        minutes = remaining_time // 60
-        seconds = remaining_time % 60
-        print(f"Remaining Time: {minutes:02d}:{seconds:02d}", end="\r")
-        time.sleep(1)
-    
-    print("Time's up! Stay focused!")
+while seconds:
+    mins,secs = divmod(second,60)
+    timer = '{:02d}:{:02d}'.format(mins,secs)
+    print(timer,end="\r")
+    time.sleep(1)
+    seconds -= 1
 
-focus_timer(25)  
+print("time is up!")
